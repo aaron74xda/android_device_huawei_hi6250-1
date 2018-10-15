@@ -15,7 +15,6 @@
 #
 
 $(call inherit-product, vendor/huawei/hi6250/hi6250-vendor.mk)
-$(call inherit-product, device/huawei/hi6250/overlay.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -100,12 +99,8 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras \
     nfc_nci.pn54x.default \
-    libnfc-nci
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+    libnfc-nci \
+    NfcNci
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -159,16 +154,18 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.hostapd@1.0 \
     android.hardware.wifi@1.2
 
+# Notch Overlay
+PRODUCT_PACKAGES += \
+   NotchAne \
+   NotchEml \
+   NotchClt
+
 # GPS
 PRODUCT_COPY_FILES += \
 	 $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
 	 $(LOCAL_PATH)/configs/gps.conf:system/etc/gps_debug.conf
 
 # Fingerprint Gestures
-PRODUCT_PACKAGES += \
-	hw-fpnav-daemon
 PRODUCT_COPY_FILES += \
-	device/huawei/hi6250/Fingerprint/hw-fingerprint.rc:system/etc/init/hw-fingerprint.rc \
-	device/huawei/hi6250/Fingerprint/hw-fpnav:system/bin/hw-fpnav \
-	device/huawei/hi6250/Fingerprint/hw-fpnav.dex:system/phh/hw-fpnav.dex \
-	device/huawei/hi6250/Fingerprint/fingerprint.kl:system/phh/huawei/fingerprint.kl
+    $(LOCAL_PATH)/keylayout/fingerprint.kl:system/usr/keylayout/fingerprint.kl
+

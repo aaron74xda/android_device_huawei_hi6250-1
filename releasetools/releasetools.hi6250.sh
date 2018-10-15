@@ -19,10 +19,6 @@
 mount -o rw,remount /system
 mount -o rw,remount /vendor
 
-# FIX FP Gestures
-rm -rf /system/usr/keychars/Virtual.kcm
-rm -rf /vendor/usr/keylayout/fingerprint.kl
-
 # Remove FBE Encryption from fstab file
 sed -e "s/,fileencryption=aes-256-xts:aes-256-cts//g" -i vendor/etc/fstab.*
 

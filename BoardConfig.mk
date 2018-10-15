@@ -94,8 +94,7 @@ BOARD_PROVIDES_BOOTLOADER_MESSAGE := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.hi6250
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := hi6250,lld,prague,warsaw,pra,was,leland
-
+TARGET_OTA_ASSERT_DEVICE := lld,leland,pra,prague,hi6250,kirin970,berkeley,blanc,emily,ane,bond,bnd,bln,fig,figo
 # Release tools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 

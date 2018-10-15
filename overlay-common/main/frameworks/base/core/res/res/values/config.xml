@@ -100,6 +100,9 @@
 
     <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">true</bool>
 
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -359,6 +362,7 @@
 
     <!-- NavBar -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
+    <bool name="config_showNavigationBar">true</bool>
 
      <!-- Enable lockscreen rotation by default -->
     <bool name="config_enableLockScreenRotation">true</bool>
@@ -383,5 +387,12 @@
          it causes the device to wake up.
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
+
+        <!-- Indicate whether the lid state impacts the accessibility of
+         the navigation buttons.  0 means it doesn't, 1 means it is accessible
+         when the lid is open, 2 means it is accessible when the lid is
+         closed.  The default is 0. -->
+    <integer name="config_lidNavigationAccessibility">1</integer>
+
 
 </resources>
