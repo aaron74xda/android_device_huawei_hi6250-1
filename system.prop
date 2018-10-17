@@ -29,3 +29,6 @@ debug.hwc.max_hw_overlays=0
 
 # Security Patch
 ro.build.version.security_patch_sys=2018-10-05
+
+# Fingerprint Gestures
+sys.fpnav.enabled=1
